@@ -1,7 +1,6 @@
 package com.demoStore.service;
 
 import com.demoStore.dto.WorkDto;
-import com.demoStore.entity.Work;
 
 import java.util.List;
 

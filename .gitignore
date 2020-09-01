@@ -14,18 +14,7 @@
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
 ### Eclipse ###
-
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+.idea
 
 # External tool builders
 .externalToolBuilders/
@@ -62,6 +51,7 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
 
 # Annotation Processing
 .apt_generated/

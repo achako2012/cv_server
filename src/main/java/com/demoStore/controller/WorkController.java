@@ -15,16 +15,17 @@ public class WorkController {
     @Autowired
     WorkService workService;
 
-    @PostMapping
+    @PostMapping("/work")
     public @ResponseBody
     WorkDto saveWork(@RequestBody WorkDto workDto){
         return workService.createWork(workDto);
     }
 
-    @GetMapping("/message")
+    @GetMapping("/work")
     public @ResponseBody
     List<WorkDto> getAllWorks(){
         return workService.getAllWorks();
     }
+
 
 }
