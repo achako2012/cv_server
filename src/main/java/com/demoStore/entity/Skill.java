@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Skills")
+@Table(name = "skill")
 public class Skill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="id", nullable=false, updatable=false)
     private Long id;
 
     @Column(nullable = false)
@@ -50,9 +51,9 @@ public class Skill {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Skill skill = (Skill) o;
-        return Objects.equals(id, skill.id) &&
-                Objects.equals(this.skill, skill.skill);
+        Skill skill1 = (Skill) o;
+        return Objects.equals(id, skill1.id) &&
+                Objects.equals(skill, skill1.skill);
     }
 
     @Override
