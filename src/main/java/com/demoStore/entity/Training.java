@@ -4,23 +4,23 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "skill")
-public class Skill {
+@Table(name = "training")
+public class Training {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="id", nullable=false, updatable=false)
     private Long id;
 
     @Column(nullable = false)
-    private String skill;
+    private String training;
 
-    public Skill() {
+    public Training() {
     }
 
-    public Skill(Long id, String skill) {
+    public Training(Long id, String training) {
         this.id = id;
-        this.skill = skill;
+        this.training = training;
     }
 
     public Long getId() {
@@ -31,19 +31,19 @@ public class Skill {
         this.id = id;
     }
 
-    public String getSkill() {
-        return skill;
+    public String getTraining() {
+        return training;
     }
 
-    public void setSkill(String skill) {
-        this.skill = skill;
+    public void setTraining(String training) {
+        this.training = training;
     }
 
     @Override
     public String toString() {
-        return "SkillDto{" +
+        return "TrainingDto{" +
                 "id=" + id +
-                ", skill='" + skill + '\'' +
+                ", training='" + training + '\'' +
                 '}';
     }
 
@@ -51,16 +51,14 @@ public class Skill {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Skill skill1 = (Skill) o;
-        return id.equals(skill1.id) &&
-                skill.equals(skill1.skill);
+        Training training1 = (Training) o;
+        return Objects.equals(id, training1.id) &&
+                Objects.equals(training, training1.training);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, skill);
+        return Objects.hash(id, training);
     }
-
 }
-
 

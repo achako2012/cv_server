@@ -15,13 +15,13 @@ public class SkillController {
     SkillService skillService;
 
 
-    @PostMapping("/skillPost")
+    @PostMapping("/skill")
     public @ResponseBody
     SkillDto saveSkill(@RequestBody SkillDto skillDto){
         return skillService.createSkill(skillDto);
     }
 
-    @GetMapping("/skillGet")
+    @GetMapping("/skill")
     public @ResponseBody
     List<SkillDto> getAllSkills(){
         return skillService.getAllSkills();
