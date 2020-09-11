@@ -8,19 +8,23 @@ import java.util.Objects;
 public class Training {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="id", nullable=false, updatable=false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
     @Column(nullable = false)
     private String training;
 
+    @Column(nullable = false)
+    private String school;
+
     public Training() {
     }
 
-    public Training(Long id, String training) {
+    public Training(Long id, String training, String school) {
         this.id = id;
         this.training = training;
+        this.school = school;
     }
 
     public Long getId() {
@@ -39,12 +43,12 @@ public class Training {
         this.training = training;
     }
 
-    @Override
-    public String toString() {
-        return "TrainingDto{" +
-                "id=" + id +
-                ", training='" + training + '\'' +
-                '}';
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
     }
 
     @Override
@@ -53,12 +57,23 @@ public class Training {
         if (o == null || getClass() != o.getClass()) return false;
         Training training1 = (Training) o;
         return Objects.equals(id, training1.id) &&
-                Objects.equals(training, training1.training);
+                Objects.equals(training, training1.training) &&
+                Objects.equals(school, training1.school);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, training);
+        return Objects.hash(id, training, school);
     }
+
+    @Override
+    public String toString() {
+        return "Training{" +
+                "id=" + id +
+                ", training='" + training + '\'' +
+                ", school='" + school + '\'' +
+                '}';
+    }
+
 }
 

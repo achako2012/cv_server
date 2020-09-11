@@ -10,6 +10,7 @@ public class TrainingConverter {
         Training training = new Training();
         training.setId(trainingDto.getId());
         training.setTraining(trainingDto.getTraining());
+        training.setSchool(trainingDto.getSchool());
         return training;
     }
 
@@ -17,6 +18,7 @@ public class TrainingConverter {
         TrainingDto trainingDto = new TrainingDto();
         trainingDto.setId(training.getId());
         trainingDto.setTraining(training.getTraining());
+        trainingDto.setSchool(training.getSchool());
         return trainingDto;
     }
 }
